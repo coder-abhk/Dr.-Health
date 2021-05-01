@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("./static/fonts/SpaceGrotesk-Regular.ttf") format("true-type");
+}
+
+body {
+  width: 100%;
+  font-family: "Space Grotesk";
+  opacity: 0.6;
+}
+
+/* navigation section */
+
+nav {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+nav,
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 99999;
+}
+
+.logo > a {
+  color: #4d1cff;
+  margin-top: 1rem;
+  font-size: 55px;
+  font-weight: 900;
+  text-decoration: none;
+  text-shadow: -5px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.links {
+  display: flex;
+  list-style-type: none;
+  padding: 1rem;
+  margin: 1rem auto;
+  overflow-x: auto;
+}
+
+.links::-webkit-scrollbar {
+  height: 7px;
+  background-color: transparent;
+}
+
+.links::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+.links::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #4d1cff;
+}
+
+.links > li {
+  margin: 0 1rem;
+  padding: 4.5px 11px;
+  border-radius: 15px;
+  background-color: black;
+  transition: 300ms ease-in-out;
+}
+
+.links > li:hover {
+  background-color: #4d1cff;
+}
+
+.links > li > a {
+  color: white;
+  text-decoration: none;
+}
+
+.links > li > a:hover {
+  text-decoration: underline;
+}
+
+/* end navigation section */
+
+/* start main section */
+
+main {
+  width: 100%;
+  height: 450px;
+  background-image: url("../img/dr_img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-origin: content-box;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  animation: scali 9000ms cubic-bezier(0.96, -0.84, 0.51, 2.16) infinite
+    alternate;
+  z-index: 999;
+}
+
+@keyframes scali {
+  0% {
+    background-image: url("../img/dr_img.jpg");
+  }
+  50% {
+    background-image: url("../img/dr_img_1.jpg");
+  }
+  100% {
+    background-image: url("../img/dr_img_2.jpg");
+  }
+}
+
+.main_heading {
+  margin: 0 3rem;
+}
+
+.main_heading > h1 {
+  font-size: 45px;
+  text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.appointment_btn > a {
+  color: white;
+  font-size: 28px;
+  padding: 5px 8px;
+  text-decoration: none;
+  background-color: black;
+  transition: 300ms ease-in-out;
+}
+
+.appointment_btn > a:hover {
+  background-color: #4d1cff;
+}
+
+.scroll_down {
+  width: 60px;
+  height: 60px;
+  margin: 2rem auto;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
+}
+
+.scroll_down::after {
+  content: "";
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: scroll_push 1800ms cubic-bezier(0.96, -0.84, 0.51, 2.16) 300ms
+    infinite;
+}
+
+@keyframes scroll_push {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+  75% {
+    top: 75%;
+    opacity: 1;
+  }
+  100% {
+    top: 85%;
+    opacity: 0;
+  }
+}
+
+/* end main section */
+
+/* start content section */
+
+section {
+  width: 100%;
+  padding: 1rem;
+}
+
+.fa-icon > i {
+  color: #4d1cff;
+  font-size: 35px;
+  padding-bottom: 0.5rem;
+}
+
+.content_header {
+  margin-bottom: 2rem;
+}
+
+.content_header > h1 {
+  text-align: center;
+}
+
+.cards {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  max-width: 247px;
+  margin: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-img {
+  max-width: 120px;
+  max-height: 120px;
+  margin: 0 auto;
+  border-radius: 15px;
+}
+
+.card-img > img {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 15px;
+  object-position: center;
+  object-fit: cover;
+  border: 3px solid #4d1cff;
+}
+
+.card-content > p {
+  text-align: center;
+}
+
+.btn > a {
+  color: white;
+  font-size: 14px;
+  padding: 5px 8px;
+  text-decoration: none;
+  background-color: black;
+  transition: 300ms ease-in-out;
+}
+
+.btn > a:hover {
+  background-color: #4d1cff;
+}
+
+/* end content section */
+
+/* start media settings */
+@media (max-width: 571px) {
+  .logo > a {
+    font-size: 28px;
+  }
+
+  main {
+    height: 371px;
+  }
+  .main_heading > h1 {
+    font-size: 28px;
+  }
+
+  .appointment_btn > a {
+    font-size: 18px;
+  }
+
+  .links {
+    width: 360px;
+  }
+
+  .scroll_down {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cards {
+    width: 80%;
+  }
+}
+
+/* end media settings */
