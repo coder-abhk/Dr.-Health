@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url("./static/fonts/SpaceGrotesk-Regular.ttf") format("true-type");
+  src: local("SpaceGrotesk-Regular"),
+    url("./static/fonts/SpaceGrotesk-Regular.ttf") format("true-type");
 }
 
 body {
