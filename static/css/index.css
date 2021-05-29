@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -202,9 +204,10 @@ section {
 }
 
 .cards {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -252,6 +255,65 @@ section {
 
 /* end content section */
 
+/* start subscription letter section */
+.flex-center{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.subscription{
+  width: 75%;
+  text-align: center;
+}
+
+.subscription h1{
+  font-size: 40px;
+}
+
+
+.subscription p{
+  width: 75%;
+  margin: 1rem auto;
+}
+
+.form-field {
+  margin-top: 1rem;
+}
+
+.form-field input{
+font-size: 20px;
+ padding: 1rem 3rem;
+ border-radius: 6px;
+ border: 2px solid #4d1cff;
+}
+
+.form-field input:last-child{
+  color: white;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background-color: #4d1cff;
+  transition: background-color 300ms;
+}
+
+.form-field input:last-child:hover{
+  background-color: black;
+}
+
+/* end subscription letter section */
+
+
+/* footer */
+footer{
+  padding: 1rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+/* end footer */
+
+
 /* start media settings */
 @media (max-width: 571px) {
   .logo > a {
@@ -281,6 +343,39 @@ section {
   .cards {
     width: 80%;
   }
+  .flex-center{
+    padding: 1rem;
+  }
+
+  .subscription{
+    width: 95%;
+    text-align: center;
+  }
+
+  .subscription h1{
+    font-size: 28px;
+  }
+
+  .subscription p{
+   width: 90%;
+  }
+
+  .form-field{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+
+.form-field input{
+  font-size: 16px;
+ padding: 1rem 2rem;
+}
+
+  .form-field input:last-child{
+    margin-top: .5rem;
+  }
+  
 }
 
 /* end media settings */
