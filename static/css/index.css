@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap");
 
 * {
   margin: 0;
@@ -100,21 +100,25 @@ main {
   background-origin: content-box;
   color: white;
   display: flex;
+  opacity: 0;
   justify-content: flex-start;
   align-items: center;
-  animation: scali 9000ms cubic-bezier(0.96, -0.84, 0.51, 2.16) infinite
-    alternate;
   z-index: 999;
+  animation: scali 9000ms cubic-bezier(0.96, -0.84, 0.51, 2.16) infinite
+    alternate-reverse;
 }
 
 @keyframes scali {
   0% {
+    opacity: 1;
     background-image: url("../img/dr_img.jpg");
   }
   50% {
+    opacity: 1;
     background-image: url("../img/dr_img_1.jpg");
   }
   100% {
+    opacity: 1;
     background-image: url("../img/dr_img_2.jpg");
   }
 }
@@ -256,7 +260,7 @@ section {
 /* end content section */
 
 /* start subscription letter section */
-.flex-center{
+.flex-center {
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -264,17 +268,16 @@ section {
   flex-direction: column;
 }
 
-.subscription{
+.subscription {
   width: 75%;
   text-align: center;
 }
 
-.subscription h1{
+.subscription h1 {
   font-size: 40px;
 }
 
-
-.subscription p{
+.subscription p {
   width: 75%;
   margin: 1rem auto;
 }
@@ -283,14 +286,14 @@ section {
   margin-top: 1rem;
 }
 
-.form-field input{
-font-size: 20px;
- padding: 1rem 3rem;
- border-radius: 6px;
- border: 2px solid #4d1cff;
+.form-field input {
+  font-size: 20px;
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  border: 2px solid #4d1cff;
 }
 
-.form-field input:last-child{
+.form-field input:last-child {
   color: white;
   cursor: pointer;
   border: 2px solid transparent;
@@ -298,21 +301,19 @@ font-size: 20px;
   transition: background-color 300ms;
 }
 
-.form-field input:last-child:hover{
+.form-field input:last-child:hover {
   background-color: black;
 }
 
 /* end subscription letter section */
 
-
 /* footer */
-footer{
+footer {
   padding: 1rem;
   text-align: center;
   background-color: #ffffff;
 }
 /* end footer */
-
 
 /* start media settings */
 @media (max-width: 571px) {
@@ -343,39 +344,37 @@ footer{
   .cards {
     width: 80%;
   }
-  .flex-center{
+  .flex-center {
     padding: 1rem;
   }
 
-  .subscription{
+  .subscription {
     width: 95%;
     text-align: center;
   }
 
-  .subscription h1{
+  .subscription h1 {
     font-size: 28px;
   }
 
-  .subscription p{
-   width: 90%;
+  .subscription p {
+    width: 90%;
   }
 
-  .form-field{
+  .form-field {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-
-.form-field input{
-  font-size: 16px;
- padding: 1rem 2rem;
-}
-
-  .form-field input:last-child{
-    margin-top: .5rem;
+  .form-field input {
+    font-size: 16px;
+    padding: 1rem 2rem;
   }
-  
+
+  .form-field input:last-child {
+    margin-top: 0.5rem;
+  }
 }
 
 /* end media settings */
