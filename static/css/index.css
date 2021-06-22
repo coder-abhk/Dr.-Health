@@ -150,6 +150,7 @@ main {
   color: #ffffff;
   margin-bottom: 0.5rem;
   opacity: 0;
+  text-shadow: 1px 2px 0px rgba(0, 0, 0, 0.2);
   animation: slideHero 1200ms ease-in-out forwards;
 }
 
@@ -378,6 +379,18 @@ footer {
 
   main {
     height: 265px;
+  }
+
+  .slide_content {
+    padding-right: 0.5rem;
+  }
+
+  .slide_content > h1 {
+    font-size: 30px;
+  }
+
+  .slide_content > p {
+    font-size: 15px;
   }
 
   .links {
