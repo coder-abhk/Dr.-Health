@@ -19,4 +19,4 @@ function changeSlide() {
   slides[count].classList.add("active");
 }
 
-setInterval(() => nextSlide(), 5000);
+setInterval(() => nextSlide(), 8000);
