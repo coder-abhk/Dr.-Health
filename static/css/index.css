@@ -20,7 +20,6 @@ body {
 /* navigation section */
 
 nav {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
   padding-bottom: 0.5rem;
 }
 
@@ -70,7 +69,7 @@ nav,
   padding: 4.5px 11px;
   border-radius: 15px;
   background-color: black;
-  transition: 300ms ease-in-out;
+  transition: background-color 300ms ease-in-out;
 }
 
 .links > li:hover {
@@ -93,55 +92,111 @@ nav,
 main {
   width: 100%;
   height: 450px;
-  background-image: url("../img/dr_img.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-origin: content-box;
-  color: white;
-  display: flex;
+  position: relative;
+  overflow: hidden;
+  background-color: #dfe6ff;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slides .slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  transform: translateX(35px);
+  animation: slideLeft 1500ms ease forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(35px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+.slides .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slides .slide.active {
+  display: block;
+}
+
+.slide_content {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.slide_content > h1 {
+  font-size: 38px;
+}
+
+.slide_content > p {
+  font-size: 18px;
+}
+
+.slide_content > h1,
+.slide_content > p {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
   opacity: 0;
-  justify-content: flex-start;
-  align-items: center;
-  z-index: 999;
-  animation: scali 9000ms cubic-bezier(0.96, -0.84, 0.51, 2.16) infinite
-    alternate-reverse;
+  animation: slideHero 1200ms ease-in-out forwards;
 }
 
-@keyframes scali {
-  0% {
-    opacity: 1;
-    background-image: url("../img/dr_img.jpg");
+.slide_content > h1 {
+  animation-delay: 1000ms;
+}
+
+.slide_content > p {
+  animation-delay: 500ms;
+}
+
+@keyframes slideHero {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
   }
-  50% {
+  to {
     opacity: 1;
-    background-image: url("../img/dr_img_1.jpg");
-  }
-  100% {
-    opacity: 1;
-    background-image: url("../img/dr_img_2.jpg");
+    transform: translateY(0);
   }
 }
 
-.main_heading {
-  margin: 0 3rem;
-}
-
-.main_heading > h1 {
-  font-size: 45px;
-  text-shadow: -1px 1px 0px rgba(0, 0, 0, 0.2);
-}
-
-.appointment_btn > a {
-  color: white;
-  font-size: 28px;
-  padding: 5px 8px;
-  text-decoration: none;
+.book_now {
+  color: #ffffff;
+  width: 135px;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
   background-color: black;
-  transition: 300ms ease-in-out;
+  transition: background-color 300ms;
+  opacity: 0;
+  animation: buttonHero 1200ms ease-in-out 500ms forwards;
 }
 
-.appointment_btn > a:hover {
+@keyframes buttonHero {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.book_now:hover {
   background-color: #4d1cff;
 }
 
@@ -322,14 +377,7 @@ footer {
   }
 
   main {
-    height: 371px;
-  }
-  .main_heading > h1 {
-    font-size: 28px;
-  }
-
-  .appointment_btn > a {
-    font-size: 18px;
+    height: 265px;
   }
 
   .links {
